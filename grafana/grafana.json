@@ -77,7 +77,7 @@
           "calcs": [
             "mean"
           ],
-          "fields": "/^avg\\(OPPHE637 Oee, OPPT241 Oee\\) \\* 100$/",
+          "fields": "/^avg\\(OPEHT947 Oee, OPEW729 Oee, OPEC386 Oee, OPEWOTTE981 Oee\\)$/",
           "values": false
         },
         "showThresholdLabels": false,
@@ -87,7 +87,7 @@
       "pluginVersion": "11.1.0-69372",
       "targets": [
         {
-          "aggregation": "none",
+          "aggregation": "average",
           "assetQuery": {
             "includeSubTimeseries": true,
             "includeSubtrees": false,
@@ -175,22 +175,6 @@
         }
       ],
       "title": "OEE for $production_line",
-      "transformations": [
-        {
-          "id": "calculateField",
-          "options": {
-            "binary": {
-              "left": "avg(OPPHE637 Oee, OPPT241 Oee)",
-              "operator": "*",
-              "right": "100"
-            },
-            "mode": "binary",
-            "reduce": {
-              "reducer": "sum"
-            }
-          }
-        }
-      ],
       "type": "gauge"
     },
     {
@@ -778,7 +762,7 @@
           "calcs": [
             "mean"
           ],
-          "fields": "/^avg\\(OPPT241 Availability, OPPHE637 Availability\\) \\* 100$/",
+          "fields": "/^avg\\(OPEHT947 Availability, OPEWOTTE981 Availability, OPEW729 Availability, OPEC386 Availability\\)$/",
           "values": false
         },
         "showThresholdLabels": false,
@@ -876,22 +860,6 @@
         }
       ],
       "title": "Availability of $production_line",
-      "transformations": [
-        {
-          "id": "calculateField",
-          "options": {
-            "binary": {
-              "left": "avg(OPPT241 Availability, OPPHE637 Availability)",
-              "operator": "*",
-              "right": "100"
-            },
-            "mode": "binary",
-            "reduce": {
-              "reducer": "sum"
-            }
-          }
-        }
-      ],
       "type": "gauge"
     },
     {
@@ -1624,8 +1592,7 @@
                 "value": 80
               }
             ]
-          },
-          "unit": "%"
+          }
         },
         "overrides": []
       },
@@ -1644,7 +1611,7 @@
           "calcs": [
             "mean"
           ],
-          "fields": "/^avg\\(OPPHE637 Quality, OPPT241 Quality\\) \\* 100$/",
+          "fields": "/^avg\\(OPEHT947 Quality, OPEW729 Quality, OPEWOTTE981 Quality, OPEC386 Quality\\)$/",
           "values": false
         },
         "showThresholdLabels": false,
@@ -1742,22 +1709,6 @@
         }
       ],
       "title": "Quality of $production_line",
-      "transformations": [
-        {
-          "id": "calculateField",
-          "options": {
-            "binary": {
-              "left": "avg(OPPHE637 Quality, OPPT241 Quality)",
-              "operator": "*",
-              "right": "100"
-            },
-            "mode": "binary",
-            "reduce": {
-              "reducer": "sum"
-            }
-          }
-        }
-      ],
       "type": "gauge"
     },
     {
@@ -2515,8 +2466,7 @@
                 "value": 80
               }
             ]
-          },
-          "unit": "%"
+          }
         },
         "overrides": []
       },
@@ -2535,7 +2485,7 @@
           "calcs": [
             "mean"
           ],
-          "fields": "/^perfo%$/",
+          "fields": "/^avg\\(OPEHT947 Performance, OPEW729 Performance, OPEWOTTE981 Performance, OPEC386 Performance\\)$/",
           "values": false
         },
         "showThresholdLabels": false,
@@ -2633,23 +2583,6 @@
         }
       ],
       "title": "Performance of $production_line",
-      "transformations": [
-        {
-          "id": "calculateField",
-          "options": {
-            "alias": "perfo%",
-            "binary": {
-              "left": "avg(OPPT241 Performance, OPPHE637 Performance)",
-              "operator": "*",
-              "right": "100"
-            },
-            "mode": "binary",
-            "reduce": {
-              "reducer": "sum"
-            }
-          }
-        }
-      ],
       "type": "gauge"
     },
     {
@@ -3346,9 +3279,9 @@
       },
       {
         "current": {
-          "selected": true,
-          "text": "Pasteurization and Homogenization",
-          "value": "2592604330414897"
+          "selected": false,
+          "text": "Extrusion Line",
+          "value": "992911512060210"
         },
         "datasource": {
           "type": "cognitedata-datasource",
@@ -3377,8 +3310,8 @@
       {
         "current": {
           "selected": false,
-          "text": "Balance Tank",
-          "value": "583163727072193"
+          "text": "Worktable",
+          "value": "506203336624584"
         },
         "datasource": {
           "type": "cognitedata-datasource",
@@ -3407,7 +3340,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-6h",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -3415,6 +3348,6 @@
   "timezone": "browser",
   "title": "dash1",
   "uid": "ddiirieau2ry8d",
-  "version": 31,
+  "version": 36,
   "weekStart": ""
 }
